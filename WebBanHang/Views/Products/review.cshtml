@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "review";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .review-item {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
+        .review-item p {
+            font-weight: bold;
+        }
+</style>
+@if (ViewBag.Reviews != null)
+{
+    <h2>Bình luận</h2>
+    <ul>
+        @foreach (var review in ViewBag.Reviews)
+        {
+            <li>
+
+
+
+                <div class="user_review_container d-flex flex-column flex-sm-row">
+                    <div class="user">
+
+                        <img src="~/Content/assets/dist/img/user1.jpg" alt="User Picture" style="width: 50px;"> <p>Tài khoản :@review.FullName</p>
+                                                                                                                <p>@review.Description</p>
+                    </div>
+                </div>
+
+                <!-- Add any other review details you want to display -->
+            </li>
+            
+        }
+
+    </ul>
+
+
+}
+else
+{
+    <p>Không có bình luận nào.</p>
+}
+
